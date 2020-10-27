@@ -20,6 +20,6 @@ public class MyFirstTest {
         cars.selectMinYear("2001");
         cars.selectCarColor("6318");
         cars.selectEngine("3.0");
-        //cars.pressSearchButton();
+        cars.pressSearchButton();
     }
 }
