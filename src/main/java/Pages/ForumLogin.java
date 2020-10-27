@@ -7,8 +7,8 @@ public class ForumLogin extends Common {
 
     private By userName = By.cssSelector("input[id = 'input-userName']");
     private By userPassword = By.cssSelector("input[id = 'input-password']");
-    private By submitButton = By.cssSelector("input[class = 'btn btn-primary btn-block']");
-    private By loginButton = By.xpath("xpath=//a[contains(@href,'/mypage/logon/')");
+    private By submitButton = By.cssSelector("input[class* = 'btn-primary']");
+    private By loginButton = By.cssSelector("input[class* = 'btn-login']");
 
     public void goToLogin () {
         driver.findElement(loginButton).click();
