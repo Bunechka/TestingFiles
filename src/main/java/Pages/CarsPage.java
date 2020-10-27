@@ -10,8 +10,8 @@ public class CarsPage extends Common {
     private By carPriceMax = By.id("f_o_8_max");
     private By minYear = By.id("f_o_18_min");
     private By carColor = By.id("f_o_17");
-    private By engineVolume = By.id("f_o_34");
-    private By submitButton = By.cssSelector("input[value = 'Meklēt']");
+    private By engineVolume = By.id("f_o_15_max");
+    private By submitButton = By.cssSelector("input[class = 'b s12']");
 
     public void setPrice (String min, String max) {
         driver.findElement(carPriceMin).sendKeys(min);
@@ -29,8 +29,8 @@ public class CarsPage extends Common {
     }
 
     public void selectEngine (String engine){
-        Select engineSelector = new Select(driver.findElement(engineVolume));
-        engineSelector.selectByValue(engine);
+        Select engineVolumeSelector = new Select(driver.findElement(engineVolume));
+        engineVolumeSelector.selectByValue(engine);
     }
 
     public void pressSearchButton () {
