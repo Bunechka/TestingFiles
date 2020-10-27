@@ -22,7 +22,7 @@ public class SSCars {
         Select engineMax = new Select(driver.findElement(By.id("f_o_15_max")));
         engineMax.selectByValue("3.0");
         Select color = new Select(driver.findElement(By.id("f_o_17")));
-        color.selectByValue("Balta");
+        color.selectByValue("6318");
 
         driver.findElement(By.cssSelector("input[class = 'b s12']")).click();
         //driver.findElement(By.xpath("//input[@class = 'b s12]")).click();

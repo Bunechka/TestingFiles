@@ -12,7 +12,14 @@ public class MyFirstTest {
         CarsPage cars = new CarsPage();
 
         page.startPage("https://www.ss.com");
-        page.chooseDogsType();
-        dogs.setAge("2","7");
+        //page.chooseDogsType();
+        //dogs.setAge("2","7");
+
+        page.chooseCarType();
+        cars.setPrice("6000", "10000");
+        cars.selectMinYear("2001");
+        cars.selectCarColor("6318");
+        cars.selectEngine("3.0");
+        cars.pressSearchButton();
     }
 }

@@ -15,4 +15,8 @@ public class Common {
             driver.manage().window().maximize();
             driver.get(url);
     }
+
+    public void stopDriver() {
+        driver.quit();
+    }
 }
