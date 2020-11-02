@@ -15,16 +15,16 @@ public class LoginPage extends Common {
     private By profileName = By.xpath("//*[@id=\"root-wrapper\"]/div/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/p[1]/strong");
     private By loginErrorMessage = By.xpath("//*[@id=\"root-wrapper\"]/div/div/div[2]/div[2]/div/div[2]/div/ul/li/ul/li/span");
 
-    public void loginToProfile (String username, String password) {
-        driver.findElement(usernameElement).sendKeys(username);
-        driver.findElement(passwordElement).sendKeys(password);
-        driver.findElement(submitButton).click();
+    //public void loginToProfile (String username, String password) {
+      //  driver.findElement(usernameElement).sendKeys(username);
+        //driver.findElement(passwordElement).sendKeys(password);
+        //driver.findElement(submitButton).click();}
 
-    }
-    public void loginToProfile () {
+    public void loginToProfile(String username, String password) {
         UserModel model = new UserModel();
         driver.findElement(usernameElement).sendKeys(model.getUsername());
         driver.findElement(passwordElement).sendKeys(model.getPassword());
+        driver.findElement(submitButton).click();
 
     }
     public String getProfileName () {
@@ -34,7 +34,6 @@ public class LoginPage extends Common {
 
     public void validateErrorMessage (String message) {
         String messageText = driver.findElement(loginErrorMessage).getText();
-
         assertThat(messageText).isEqualTo(message);
     }
 }
