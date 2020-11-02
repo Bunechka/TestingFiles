@@ -53,9 +53,6 @@ public class LoginTest {
 
         loginPage.loginToProfile(userModel.getUsername(), userModel.getPassword());
 
-        //loginPage.loginToProfile(); //validation of the login as such, disregarding user details. For this make Before with announced user and method
-
-
         homePage.sleep(10);
 
         loginPage.validateErrorMessage("Nepareiza e-pasta adrese vai parole.");
