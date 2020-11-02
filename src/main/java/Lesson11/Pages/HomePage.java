@@ -9,6 +9,6 @@ public class HomePage extends Common {
 
     public void openLoginPage() {
         driver.findElement(accountOption).click();
-    }
 
+    }
 }
