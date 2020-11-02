@@ -4,9 +4,7 @@ import Lesson10.Common;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 public class ForumProfileChange extends Common {
     private final By btnProfile = By.xpath("//*[@id=\"main-header\"]/div/div[3]/div/div[2]/ul/li/a");
