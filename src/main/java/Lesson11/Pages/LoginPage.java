@@ -12,6 +12,8 @@ public class LoginPage extends Common {
     private By passwordElement = By.id("pass");
     private By submitButton = By.id("send2");
     private By errorMessage = By.id("advice-validate-email-email");
+    private By profileName = By.xpath("//*[@id=\"root-wrapper\"]/div/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/p[1]/strong");
+    private By loginErrorMessage = By.xpath("//*[@id=\"root-wrapper\"]/div/div/div[2]/div[2]/div/div[2]/div/ul/li/ul/li/span");
 
     public void loginToProfile (String username, String password) {
         driver.findElement(usernameElement).sendKeys(username);
@@ -25,9 +27,14 @@ public class LoginPage extends Common {
         driver.findElement(passwordElement).sendKeys(model.getPassword());
 
     }
+    public String getProfileName () {
+        return driver.findElement(profileName).getText();
+
+    }
 
     public void validateErrorMessage (String message) {
-        String messageText = driver.findElement(errorMessage).getText();
-        assertThat(messageText).isNotEqualTo(message);
+        String messageText = driver.findElement(loginErrorMessage).getText();
+
+        assertThat(messageText).isEqualTo(message);
     }
 }

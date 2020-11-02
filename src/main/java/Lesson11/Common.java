@@ -2,6 +2,7 @@ package Lesson11;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -20,11 +21,19 @@ public class Common {
             driver.manage().window().maximize();
             driver.get(url);
 
-        Map prefs = new HashMap();
-        prefs.put("profile.default_content_settings.cookies",2);
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", prefs);
 
+    }
+
+    public void sleep(int x){
+        try {
+            Thread.sleep(1000 * x);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void scrollTo(WebElement element){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public void stopDriver() {
