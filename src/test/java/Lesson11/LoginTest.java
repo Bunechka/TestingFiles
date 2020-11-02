@@ -4,11 +4,9 @@ import Lesson11.Models.UserModel;
 import Lesson11.Pages.HomePage;
 import Lesson11.Pages.LoginPage;
 import org.junit.Assert;
-import org.junit.Test;
+ import org.junit.Test;
 
 public class LoginTest {
-
-    private Object driver;
 
     @Test
     public void positiveLoginTest() {
@@ -29,7 +27,6 @@ public class LoginTest {
 
         //loginPage.loginToProfile(); //validation of the login as such, disregarding user details. For this make Before with announced user and method
 
-
         homePage.sleep(10);
 
         Assert.assertEquals("Lena Testing", loginPage.getProfileName());
@@ -49,7 +46,7 @@ public class LoginTest {
 
         homePage.openLoginPage();
 
-        homePage.sleep(10);
+        homePage.sleep(3);
 
         loginPage.loginToProfile(userModel.getUsername(), userModel.getPassword());
 
@@ -58,5 +55,20 @@ public class LoginTest {
         loginPage.validateErrorMessage("Nepareiza e-pasta adrese vai parole.");
 
         common.stopDriver();
+    }
+
+    @Test
+     public void loginWithSocialMedia () {
+        Common common = new Common();
+        HomePage homePage = new HomePage();
+        LoginPage loginPage = new LoginPage();
+        UserModel userModel = new UserModel();
+        userModel.setUsername("Testing@inbox.lv");
+        userModel.setPassword("TestingProfile");
+
+        common.startPage("https://www.janisroze.lv");
+        homePage.openLoginPage();
+        homePage.sleep(3);
+        loginPage.openSocialMedia();
     }
 }
