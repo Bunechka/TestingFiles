@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class Common {
 
@@ -21,7 +19,6 @@ public class Common {
             driver.manage().window().maximize();
             driver.get(url);
 
-
     }
 
     public void sleep(int x){
@@ -32,7 +29,7 @@ public class Common {
         }
     }
 
-    protected void scrollTo(WebElement element){
+    public void scrollTo(WebElement element){
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
