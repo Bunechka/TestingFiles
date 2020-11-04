@@ -4,7 +4,8 @@ import Lesson11.Models.UserModel;
 import Lesson11.Pages.HomePage;
 import Lesson11.Pages.LoginPage;
 import org.junit.Assert;
- import org.junit.Test;
+import org.junit.Test;
+
 
 public class LoginTest {
 
@@ -45,7 +46,6 @@ public class LoginTest {
         common.startPage("https://www.janisroze.lv");
 
         homePage.openLoginPage();
-
         homePage.sleep(3);
 
         loginPage.loginToProfile(userModel.getUsername(), userModel.getPassword());
@@ -70,5 +70,8 @@ public class LoginTest {
         homePage.openLoginPage();
         homePage.sleep(3);
         loginPage.openSocialMedia();
+        loginPage.popUpWindow();
+        homePage.sleep(10);
+
     }
 }
